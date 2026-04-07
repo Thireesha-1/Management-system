@@ -1,0 +1,26 @@
+<h2>Clients</h2>
+
+<form method="GET">
+<input name="search" placeholder="Search">
+<button>Search</button>
+</form>
+
+<form method="POST" action="/add_client">
+<input name="name" placeholder="Name">
+<input name="company" placeholder="Company">
+<button>Add</button>
+</form>
+
+<table border="1">
+{% for c in clients %}
+<tr>
+<td>{{c.id}}</td>
+<td>{{c.name}}</td>
+<td>{{c.company}}</td>
+<td>
+<a href="/edit_client/{{c.id}}">Edit</a>
+<a href="/delete_client/{{c.id}}">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>
